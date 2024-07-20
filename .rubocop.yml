@@ -1,0 +1,21 @@
+inherit_gem:
+  syntax_tree: config/rubocop.yml
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.0
+
+Metrics:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Naming/MethodName:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
