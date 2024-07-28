@@ -12,6 +12,9 @@ GEM
     rake (13.2.1)
     syntax_tree (6.2.0)
       prettier_print (>= 1.2.0)
+    w_syntax_tree-erb (0.12.0)
+      prettier_print (~> 1.2, >= 1.2.0)
+      syntax_tree (~> 6.1, >= 6.1.1)
 
 PLATFORMS
   arm64-darwin-23
@@ -21,6 +24,7 @@ DEPENDENCIES
   minitest (~> 5.16)
   rake (~> 13.0)
   syntax_tree-tailwindcss!
+  w_syntax_tree-erb
 
 BUNDLED WITH
    2.5.14
