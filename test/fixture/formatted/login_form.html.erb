@@ -1,0 +1,54 @@
+<%# Modified version of https://github.com/tarellel/tailwind_views_generator/blob/main/lib/templates/devise/erb/sessions/new.html.erb.tt %>
+<div class="mx-0 overflow-hidden md:mx-auto md:max-w-md">
+  <div class="mb-4 flex flex-col justify-center rounded bg-gray-50 px-8 pb-8 pt-6 shadow-md">
+    <h2 class="text-center text-xl text-black"><%= title("Log In") %></h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="mb-4">
+        <%= f.label(:email, class: "email optional block text-sm font-medium text-gray-600") %>
+        <%= f.email_field(
+          :email,
+          autofocus: true,
+          class:
+            "string w-full appearance-none rounded border border-gray-300 bg-white px-3 py-2 leading-6 text-gray-400 shadow transition-colors duration-200 ease-in-out focus:border-blue-500 focus:outline-none focus:ring-0"
+        ) %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label(
+          :password,
+          class: "email optional block text-sm font-medium text-gray-600"
+        ) %>
+        <%= f.password_field(
+          :password,
+          class:
+            "string w-full appearance-none rounded border border-gray-300 bg-white px-3 py-2 leading-6 text-gray-400 shadow transition-colors duration-200 ease-in-out focus:border-blue-500 focus:outline-none focus:ring-0"
+        ) %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="boolean optional user_remember_me mb-4 flex items-start">
+          <div class="flex h-5 items-center">
+            <%= f.check_box(
+              :remember_me,
+              class:
+                "optional focus:ring-indigo-500:focus boolean h-4 w-4 rounded border-gray-300 text-indigo-600 ring-offset-2 focus:ring-2"
+            ) %>
+          </div>
+          <div class="ml-3 text-sm">
+            <%= f.label(
+              :remember_me,
+              class: "boolean optional block text-sm font-medium text-gray-600"
+            ) %>
+          </div>
+        </div>
+      <% end %>
+      <%= f.submit(
+        "Log in",
+        class:
+          "my-2 w-full rounded bg-blue-500 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
+      ) %>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
