@@ -8,6 +8,7 @@ module SyntaxTree
     autoload :Sorter, "syntax_tree/tailwindcss/sorter"
     autoload :RubyMutationVisitor, "syntax_tree/tailwindcss/ruby_mutation_visitor"
     autoload :ErbMutationVisitor, "syntax_tree/tailwindcss/erb_mutation_visitor"
+    autoload :HamlMutationVisitor, "syntax_tree/tailwindcss/haml_mutation_visitor"
 
     class << self
       attr_accessor :output_path, :custom_order
@@ -20,6 +21,11 @@ module SyntaxTree
       def erb_mutation_visitor
         sorter = Sorter.load_cached
         ErbMutationVisitor.new(sorter)
+      end
+
+      def haml_mutation_visitor
+        sorter = Sorter.load_cached
+        HamlMutationVisitor.new(sorter)
       end
     end
   end

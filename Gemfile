@@ -9,4 +9,5 @@ gem "rake", "~> 13.0"
 
 gem "minitest", "~> 5.16"
 
+gem "syntax_tree-haml"
 gem "w_syntax_tree-erb"
