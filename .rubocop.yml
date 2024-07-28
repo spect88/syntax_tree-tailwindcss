@@ -19,3 +19,13 @@ Naming/MethodName:
 
 Naming/MethodParameterName:
   Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Exclude:
+    - test/fixture/**/*.rb
