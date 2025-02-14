@@ -26,7 +26,7 @@ module FormBuilders
 
       classes =
         class_names(
-          "shadow bg-yellow-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded hover:bg-yellow-700",
+          "rounded bg-yellow-800 px-4 py-2 font-bold text-white shadow hover:bg-yellow-700 focus:outline-none focus:ring",
           border_color_classes(nil),
           custom_opts[:class]
         )
@@ -39,7 +39,7 @@ module FormBuilders
 
       classes =
         class_names(
-          "block bg-gray-200 focus:bg-white text-gray-700 py-2 rounded leading-tight focus:outline-none px-4",
+          "block rounded bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:bg-white focus:outline-none",
           border_color_classes(method),
           custom_opts[:class]
         )
@@ -57,7 +57,7 @@ module FormBuilders
 
       classes =
         class_names(
-          "bg-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white",
+          "rounded bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:bg-white focus:outline-none",
           border_color_classes(object_method),
           custom_opts[:class]
         )
@@ -89,7 +89,7 @@ module FormBuilders
 
       label_classes =
         label_opts[:class] ||
-          class_names("block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4")
+          class_names("mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right")
       label_classes =
         class_names(label_classes, "text-yellow-800 dark:text-yellow-400") if field_options[
         :disabled

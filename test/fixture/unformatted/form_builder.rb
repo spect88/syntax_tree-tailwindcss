@@ -26,7 +26,7 @@ module FormBuilders
 
       classes =
         class_names(
-          "shadow bg-yellow-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded hover:bg-yellow-700",
+          "shadow bg-yellow-800 focus:ring focus:outline-none text-white font-bold py-2 px-4 rounded hover:bg-yellow-700",
           border_color_classes(nil),
           custom_opts[:class]
         )

@@ -1,19 +1,22 @@
 # frozen_string_literal: true
 
+require "syntax_tree/complete_mutation_visitor"
+
 module SyntaxTree
   module Tailwindcss
-    class RubyMutationVisitor < SyntaxTree::MutationVisitor
+    class RubyMutationVisitor < SyntaxTree::CompleteMutationVisitor
       def initialize(sorter)
         super()
         @sorter = sorter
 
         # Rewrite `class: "foo bar"` and `:class => "foo bar"`
-        mutate(<<~PATTERN) { |node| node.copy(value: rewrite_string_literal(node.value)) }
-            Assoc[
-              key: Label[value: 'class:'] | SymbolLiteral[value: Kw[value: 'class']],
-              value: StringLiteral
-            ]
-          PATTERN
+        pattern = <<~PATTERN
+          Assoc[
+            key: Label[value: 'class:'] | SymbolLiteral[value: Kw[value: 'class']],
+            value: StringLiteral
+          ]
+        PATTERN
+        mutate(pattern) { |node| node.copy(value: rewrite_string_literal(node.value)) }
 
         # Rewrite `class_names("foo bar", "lorem ipsum")`
         mutate("CallNode[message: Ident[value: 'class_names']]") do |node|
