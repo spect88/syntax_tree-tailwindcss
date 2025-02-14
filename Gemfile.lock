@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     syntax_tree-tailwindcss (0.1.0)
-      syntax_tree
+      syntax_tree (~> 6.2)
 
 GEM
   remote: https://rubygems.org/
